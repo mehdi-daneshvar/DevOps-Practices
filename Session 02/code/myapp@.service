@@ -1,0 +1,13 @@
+[Unit]
+Description=my flask app
+After=network.target
+
+[Service]
+Restart=always
+User=myapp
+Group=myapp
+WorkingDirectory=/opt/myapp
+ExecStart=/usr/bin/python3 app.py %i
+
+[Install]
+WantedBy=default.target
